@@ -21,7 +21,7 @@ import java.util.Map;
 public class KafkaConfig {
 
     private static final Integer PARTITION_COUNT = 1;
-    private static final Integer REPLICA_COUNT = 2;
+    private static final Integer REPLICA_COUNT = 1;
 
 
     @Value("${spring.kafka.bootstrap-servers}")
@@ -36,10 +36,10 @@ public class KafkaConfig {
     @Value("${spring.kafka.topic.orchestrator}")
     private String orchestratorTopic;
 
-    @Value("${spring.kafka.consumer.auto-offset-reset}")
+    @Value("${spring.kafka.topic.product-validation-sucess}")
     private String productValidationSucessTopic;
 
-    @Value("${spring.kafka.consumer.auto-offset-reset}")
+    @Value("${spring.kafka.topic.product-validation-fail}")
     private String productValidationFailTopic;
 
     @Value("${spring.kafka.consumer.auto-offset-reset}")
@@ -97,7 +97,7 @@ public class KafkaConfig {
 
     @Bean
     public  NewTopic orchestratorTopic(){
-        return buildTopic(startSagaTopic);
+        return buildTopic(orchestratorTopic);
     }
 
     @Bean

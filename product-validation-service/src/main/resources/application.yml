@@ -10,6 +10,7 @@ spring:
       orchestrator: orchestrator
       product-validation-sucess: product-validation-sucess
       product-validation-fail: product-validation-fail
+      notify-ending: notify-ending
 
 
     consumer:

@@ -3,9 +3,11 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
+    bootstrap-severs: ${KAFKA_BROKER:localhost:9092}
     topic:
-      teste: teste
+      orchestrator: orchestrator
+      inventory-sucess: inventory-sucess
+      inventory-fail: inventory-fail
     consumer:
       group-id: inventory-group
       auto-offset-reset: latest
